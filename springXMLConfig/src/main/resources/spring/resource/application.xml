@@ -11,13 +11,16 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
 <bean id="controller" class="spring.app.Controller">
-<constructor-arg ref="view2" />
+<constructor-arg ref="view" />
 </bean>
 
-<bean id="view1" class="spring.app.View1">
+
+<!-- if u want to pass View2 obj to Controller, just change the
+class="spring.app.View1 to class="spring.app.View2-->
+
+<bean id="view" class="spring.app.View1">
 </bean>
 
-<bean id="view2" class="spring.app.View2">
-</bean>
+
 
 </beans>
