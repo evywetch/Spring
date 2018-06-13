@@ -6,12 +6,11 @@ import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Component;
 
 /*
- * The @ComponentScan is used for this
-to be added to the class that starts the IoC container.
+ * The @ComponentScan is used for a class that starts the IoC container.
  */
 @ComponentScan
 public class Application {
-	// @Autowired tells that Controller needs to be object injected
+	// @Autowired tells that Controller object will be injected to Application
 	@Autowired  Controller controller;
 
 	public static void main(String[] args) {

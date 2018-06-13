@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 public class Controller {
 	
 	/*
-	 *-  @Qualifier("TheView1") specifies that Which View will be use as View view ; here
-	 * -  ("TheView1") specifies that new View1 will be inject to Controller
+	 *-  @Qualifier("TheView1") specifies that Which View will be used as View view ; here
+	 * -  ("TheView1") specifies that new View1 will be injected to Controller
 	 * - ("TheBean") or ("Bunnie") they are the names of a bean method in Application
-	 *   which return new View2, So if we specify @Qualifier("TheBean") or
+	 *   which returns new View2, So if we specify @Qualifier("TheBean") or
 	 *   @Qualifier("TheBean"), new View2 will be injected to Controller
 	 */
 
