@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="application" class="spring.app.Application">
+<constructor-arg ref="controller" />
+</bean>
+
+
+<bean id="controller" class="spring.app.Controller">
+<constructor-arg ref="view2" />
+</bean>
+
+<bean id="view1" class="spring.app.View1">
+</bean>
+
+<bean id="view2" class="spring.app.View2">
+</bean>
+
+</beans>
