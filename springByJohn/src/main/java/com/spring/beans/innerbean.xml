@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="jungle" class="com.spring.Jungle">
+		<property name="bigest">
+
+<!-- 						This is inner bean 
+
+	- The inner bean can't not be used outside its scope
+	- That's why we can't use elephant(id name) in the scope of animals 
+	- So if u use inner bean, the id name is no need-->
+	
+			<bean  class="com.spring.Animal">
+				<property name="name" value="Richard"></property>
+				<property name="type" value="elephant"></property>
+			</bean>
+
+
+		</property>
+		<property name="animals">
+			<list>
+			
+	<!--  							Inner bean 										-->
+	
+				<bean class="com.spring.Animal">
+					<property name="name" value="Igor"></property>
+					<property name="type" value="lion"></property>
+				</bean>
+<!-- We want to add elephant here too, so we hv to define it here agian
+that's the down side of inner bean -->
+				<bean  class="com.spring.Animal">
+					<property name="name" value="Richard"></property>
+					<property name="type" value="elephant"></property>
+				</bean>
+
+				<bean class="com.spring.Animal">
+					<property name="name" value="Bob"></property>
+					<property name="type" value="snake"></property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+
+
+</beans>

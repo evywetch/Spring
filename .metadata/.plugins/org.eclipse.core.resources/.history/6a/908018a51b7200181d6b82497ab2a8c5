@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="logger" class="com.spring.Logger">
+	</bean>
+	<bean id="consoleWriter" class="com.spring.ConsoleWriter"></bean>
+	<bean id="fileWriter" class="com.spring.FileWriter"></bean>
+
+</beans>
+
+
+<!--  * Namespaces define what we can use in the xml file -->
+
+<!--  1. We gonna add new scheme in here then we can a new tag in here
+
+To do that...
+1.1 go to Namespaces tab -> choose "context" namespace
+
+
+
+
+
+
+
+
+
+ -->

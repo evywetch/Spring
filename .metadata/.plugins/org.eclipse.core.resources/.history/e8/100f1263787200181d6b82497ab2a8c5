@@ -1,0 +1,17 @@
+package player;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import soundsystem.CompactDisc;
+
+@Component
+public class CDPlayer {
+
+@Autowired
+private CompactDisc cd;
+	
+	public void playCd(){
+		cd.play();
+	}
+}

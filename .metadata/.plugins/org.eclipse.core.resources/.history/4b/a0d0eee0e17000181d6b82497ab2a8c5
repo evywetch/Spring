@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="logger" class="com.spring.Logger" autowire="byName"></bean>
+	<bean id="consolewriter" class="com.spring.ConsoleWriter"></bean>
+	<bean id="filewriter" class="com.spring.FileWriter"></bean>
+
+</beans>
+
+
+
+<!--      How to wire 2 onject from the same type to Logger
+
+* Have to wire by name
+
+1. Click logger -> choose "by name" for autowire
+
+
+
+
+
+
+
+ -->

@@ -1,0 +1,31 @@
+package player;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+import soundsystem.ColdPlay;
+import soundsystem.CompactDisc;
+
+@Component
+public class CDPlayer implements MediaPlayer {
+
+
+private ColdPlay cp;
+
+/* adding @Autowired at the constructor means every paramerter classes that are passed
+ * to constructor will be autowired to this object. So u don't hv to annotate
+ * the properties, only once at constructor.
+ * 
+ */
+@Autowired 
+	public CDPlayer(ColdPlay cp){
+		this.cp = cp;
+	}
+
+	public void play() {
+	if(cp != null) 
+		cp.play();
+	
+	}
+}

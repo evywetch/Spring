@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="logger" class="com.spring.Logger" autowire="byType"></bean>
+	<bean id="consolewriter" class="com.spring.ConsoleWriter"></bean>
+	<bean id="filewriter" class="com.spring.FileWriter"></bean>
+</beans>
+
+
+
+
+
+
+<!--  					How to autowiring ConsoleWriter& FileWriter to Logger
+
+1. click at logger bean -> select "by type" 
+
+
+
+
+
+
+
+
+
+
+
+
+-->

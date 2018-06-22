@@ -1,0 +1,74 @@
+package com.spring;
+
+public class Person {
+	
+	private int id;
+	private String name;
+	private int taxId;
+	private Address address;
+	
+	public Person(){
+		
+	}
+	
+	public Person(int id, String name){
+		this.id = id;
+		this.name = name;
+	}
+	
+	/*
+	 * - factory() is a builded-in method to create beans
+	 * - below is the example of factory() for person ( Dont hv to name it "factory"
+	 *   but it works like factory()
+	 * - Then we can config xml to tell it to use this method to construct Person bean
+	 * instead of using constructor
+	 */
+	public static Person getInstance(){
+		System.out.println("creating Person using fatory method");
+		return new Person();
+	}
+	
+	/*
+	 * -Beans in Spring have a life cycle, u can select method which will run after the 
+bean has been created and before the will be destroy- it is init()
+		- Below is the example of init() for Person
+	 */
+	public void onCreate(){
+		System.out.println("Person created: " + this);
+	}
+	
+	public void onDestroy(){
+		System.out.println("Person destroyed.");
+	}
+	
+	public void speak(){
+		System.out.println("Hello, i am a person.");
+	}
+	
+	
+
+	public void setTaxId(int taxId) {
+		this.taxId = taxId;
+	}
+	
+	
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + ", taxId=" + taxId + ", address=" + address + "]";
+	}
+
+	
+	
+	
+	
+
+}

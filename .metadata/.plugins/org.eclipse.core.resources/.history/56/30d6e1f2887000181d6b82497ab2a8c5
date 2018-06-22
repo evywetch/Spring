@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+
+<!-- We create 2 person bean using factory(), if u run app container will create 
+these 2 person objects  -->
+
+	<bean id="person1" class="com.spring.Person" scope="singleton"
+		init-method="onCreate" destroy-method="onDestroy"
+		factory-method="getInstance">
+<!--  - Bcoz u use factory() to create bean for Person(int,String), it will take 
+care the two arguments (int, String) So u don't hv to define it here 
+
+        -But if factory() hv argument, and doesn't set any argument value to the 
+        return object
+ -->
+
+
+		<property name="taxId" value="123"></property>
+		<property name="address" ref="address"></property>
+		<constructor-arg name="id" type="int" value="777"></constructor-arg>
+		<constructor-arg name="name" type="String" value="mary"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="person2" class="com.spring.Person" scope="singleton"
+		init-method="onCreate" destroy-method="onDestroy"
+		factory-method="createPerson" factory-bean="personFactory">
+
+		<property name="taxId" value="123"></property>
+		<property name="address" ref="address"></property>
+		<constructor-arg name="id" type="int" value="444"></constructor-arg>
+		<constructor-arg name="name" type="String" value="Kole"></constructor-arg>
+	</bean>
+
+	<bean id="address" class="com.spring.Address">
+		<constructor-arg name="street" value="street"></constructor-arg>
+		<constructor-arg name="postcode" value="1111AA"></constructor-arg>
+	</bean>
+	<bean id="personFactory" class="com.spring.PersonFactory"></bean>
+</beans>

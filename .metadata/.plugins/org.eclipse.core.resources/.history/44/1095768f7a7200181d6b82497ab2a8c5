@@ -1,0 +1,10 @@
+package soundsystem;
+
+public class ColdPlay implements CompactDisc {
+
+	public void play() {
+		System.out.println("la la la la");
+		
+	}
+
+}

@@ -1,0 +1,46 @@
+package com.spring;
+
+import org.springframework.context.ApplicationContext;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+public class App {
+	
+	public static void main(String[] args){
+		
+		/* If u use ClassPathXmlApplicationContext,it can load ur beans from any folder in the class path
+		 * And u create a package to put ur bean xml files there.
+		 * U can only add from the package name where u put ur beans xml.
+		
+		 */
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/spring/beans/bean.xml");
+		
+		Person person1 = (Person)context.getBean("person");
+		Person person2 = (Person)context.getBean("person");
+		person1.setTaxId(666);
+		
+		System.out.println(person2);
+		
+		((ClassPathXmlApplicationContext) context).close();
+		
+	}
+
+}
+
+
+/*
+ * -Spring lets you bold together POJO
+
+   - Bean is a Singleton by default. If u ask 2 Person obj from container. 
+u will always get the same object. 
+	- Set bean scope to be "prototype" makes u be able to get new bean from each request.
+
+	-Beans in Spring have a life cycle, u can select method which will run after the 
+bean has been created and before the will be destroy- it is init()
+
+	- If u use scope = prototype, the destroy() will not be run.
+	
+	- u can set global scope, init() or destroy() for ur container
+
+*/

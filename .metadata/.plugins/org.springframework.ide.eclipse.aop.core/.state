@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="springAnnotationsWiring"/>
+<aop-project name="springAutowiring"/>
+<aop-project name="springByJohn"/>
+<aop-project name="springSPELByJohn"/>
+</aop-reference-model>

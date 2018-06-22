@@ -1,0 +1,53 @@
+package com.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Logger {
+	//@Autowired
+	private ConsoleWriter consoleWriter;
+	//@Autowired
+	private FileWriter fileWriter;
+	
+	/* Or can put @Autowired at only at constructor - then it will automatically
+	 * wire consoleWriter, fileWriter to constructor
+	 * 
+	 
+	@Autowired  
+	public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter) {
+		super();
+		this.consoleWriter = consoleWriter;
+		this.fileWriter = fileWriter;
+	}
+	
+	*/
+	
+	/* Or u can mix @Autowired at the constructor and the set()
+	 * In this case it will wire only consoleWriter to consturctor
+	 * and wire fileWriter using set()
+	 * 
+	 */
+	@Autowired 
+	public Logger(ConsoleWriter consoleWriter) {
+		super();
+		this.consoleWriter = consoleWriter;
+		
+	}
+	
+
+	// @Autowired - can put this either at property or set()
+	public void setConsoleWriter(ConsoleWriter consoleWriter) {
+		this.consoleWriter = consoleWriter;
+	}
+	
+	 @Autowired
+	public void setFileWriter(FileWriter fileWriter) {
+		this.fileWriter = fileWriter;
+	}
+	
+	public void writeFile(String text){
+		fileWriter.write(text);
+	}
+	public void writeConsole(String text){
+		consoleWriter.write(text);
+	}
+}

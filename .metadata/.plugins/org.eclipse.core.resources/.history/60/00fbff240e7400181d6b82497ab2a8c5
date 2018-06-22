@@ -1,0 +1,32 @@
+package com.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Robot {
+
+	private String id = "default robot";
+	private String speech = "hello";
+	
+	
+	public void speak(){
+		System.out.println(id + ":" + speech);
+	}
+
+	
+// Add 	@Autowired so u can use @Value to set value of the properties directly here
+@Autowired
+	public void setId(@Value("12345")String id) {
+		this.id = id;
+	}
+
+@Autowired
+	public void setSpeech(String speech) {
+		this.speech = speech;
+	}
+	
+	
+	
+}

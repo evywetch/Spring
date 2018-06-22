@@ -1,0 +1,8 @@
+package soundsystem;
+
+
+@Configuration
+@ComponentScan
+public class CDPlayerConfig {
+
+}

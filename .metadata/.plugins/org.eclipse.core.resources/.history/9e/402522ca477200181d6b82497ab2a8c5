@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+<bean id="logger" class="com.spring.Logger2">
+	</bean>
+	<bean id="consoleWriter" class="com.spring.ConsoleWriter"></bean>
+	
+	<bean id="hgbfjg" class="com.spring.FileWriter"></bean>
+	<bean id="fileWriter2" class="com.spring.FileWriter"></bean>
+
+	<context:annotation-config></context:annotation-config>
+</beans>
+
+
+<!--  * Namespaces define what we can use in the xml file -->
+
+<!--  1. We gonna add new scheme in here then we can a new tag in here
+
+To do that...
+1.1 go to Namespaces tab -> choose "context" namespace 
+    Then you will get the "context" tab at the bottom xml page
+1.2 click "context" tab -> right click root "beans" -> choose <context:annotation:config>
+	This tells spring that we want to config using annotation
+	
+-->

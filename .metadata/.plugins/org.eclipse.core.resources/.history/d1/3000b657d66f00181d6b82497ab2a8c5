@@ -1,0 +1,20 @@
+package com.spring;
+
+public class Person {
+	
+	private int id;
+	private String name;
+	
+	public Person(){
+		
+	}
+	
+	public Person(int id, String nane){
+		this.id = id;
+		this.name = name;
+	}
+	public void speak(){
+		System.out.println("Hello, i am a person.");
+	}
+
+}

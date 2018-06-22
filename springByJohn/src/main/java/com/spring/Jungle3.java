@@ -1,0 +1,61 @@
+package com.spring;
+
+import java.util.*;
+
+public class Jungle3 {
+
+	private Map<String, String> foods ; //= new HashMap<String, String>()
+	private Map<String, Animal> animals ; // = new HashMap<String, Animal>()
+
+	public void setFoods(Map<String, String> foods) {
+		this.foods = foods;
+	}
+
+	public void setAnimals(Map<String, Animal> animals) {
+		this.animals = animals;
+	}
+
+	@Override
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+
+		for (Map.Entry<String, String> entry : foods.entrySet()) {
+			sb.append(entry.getKey() + ":" + entry.getValue() + "\n");
+			
+		}
+		
+		sb.append("\n");
+		
+		for (Map.Entry<String, Animal> entry : animals.entrySet()) {
+			sb.append(entry.getKey() + ":" + entry.getValue() + "\n");
+			
+		}
+		
+		
+		return sb.toString();
+	}
+
+}
+
+/*      		 How to define more than 1 Map in container (twomapsbean.xml)
+ * 
+ * 1. right click " jungle" bean ( it's a bean of Jungle3 class ) --> choose insert<property> element
+ * 2. give a property name " animals "
+ * 3. right click " animals " and choose insert<map> element
+ * ( in this case we choose <map> instead of <props> bcoz <map> supprot no String values )
+ * 4. right click "map" choose insert<entry> element
+ * 5. fill the key as "lion"
+ * 6. fill the value-ref as "lion"  ( this ref is from another bean called " lion " )
+ * 7. do the same as 7. if u want to add more element
+ * 
+ * **** If u use Object as a key in Map (Ex. Animal) that onject should implement 
+ * the hashCode() and equals()
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */

@@ -1,0 +1,11 @@
+package com.spring;
+
+public class ConsoleWriter implements LogWriter {
+
+	@Override
+	public void write() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

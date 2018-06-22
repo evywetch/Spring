@@ -1,0 +1,19 @@
+package app;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import soundsystem.CompactDisc;
+import soundsystem.SgtPeppers;
+
+public class App {
+	
+	public static void main(String[] args){
+		
+		ApplicationContext context = new AnnotationConfigApplicationContext("CDPlayerConfig.class");
+		
+		SgtPeppers cd =  context.getBean(SgtPeppers.class);
+		cd.play();
+	}
+
+}

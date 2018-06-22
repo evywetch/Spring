@@ -1,0 +1,23 @@
+package player;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+
+import soundsystem.CDPlayerConfig;
+import soundsystem.CompactDisc;
+
+@Import(soundsystem.CDPlayerConfig.class)
+@Configuration
+//@ComponentScan("player")
+public class PlayerConfig {
+	
+	@Autowired
+	CompactDisc sgtPeppers;
+
+	public CDPlayer cdPlayer(){
+		return new CDPlayer(sgtPeppers);
+	}
+
+}

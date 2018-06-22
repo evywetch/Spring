@@ -1,0 +1,13 @@
+package soundsystem;
+
+import org.springframework.stereotype.Component;
+
+@Component("coldplay")
+public class ColdPlay implements CompactDisc {
+
+	public void play() {
+		System.out.println("la la la la");
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package soundsystem;
+
+public class SgtPeppers implements CompactDisc {
+
+}

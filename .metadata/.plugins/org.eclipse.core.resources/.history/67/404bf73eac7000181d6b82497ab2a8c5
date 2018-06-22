@@ -1,0 +1,12 @@
+package com.spring;
+
+import java.util.*;
+
+public class Jungle3 {
+	
+	private Map<String, String> foods = new HashMap<String,String>();
+	private Map<String,Animal> animals = new HashMap<String,Animal>();
+	
+	
+
+}

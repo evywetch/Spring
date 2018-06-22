@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byType" default-autowire-candidates="*Writer">
+
+
+<bean id="logger" class="com.spring.Logger4">
+	</bean>
+	<bean id="consoleWriter" class="com.spring.ConsoleWriter"></bean>
+	<bean id="fileWriter" class="com.spring.FileWriter"></bean>
+	
+
+	<bean id="blabla" class="com.spring.FileWriter"
+		autowire-candidate="false">
+	</bean>
+
+
+</beans>
+
+
+<!-- How to set default autowire for entire xml(it applies only one xml file) 
+
+1. select "beans"  > select autowire
+
+-->
+
+<!--  In case that u set 2 bean of the same type(fileWriter ,blabla)
+	  But u want to tell container that u want only one bean from that type 
+	  to be the candidate of "logger" U can use > default-autowire-candidates
+	  and set the id of the bean that u want to inject to "logger"
+	  
+1. select "beans"
+2. fill in 	default-autowire-candidates with the id name of bean u want to inject  
+	  
+	  
+	  
+	  
+	   -->

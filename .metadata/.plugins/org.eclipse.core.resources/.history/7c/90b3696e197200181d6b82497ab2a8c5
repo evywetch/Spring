@@ -1,0 +1,10 @@
+package com.spring;
+
+public class FileWriter implements LogWriter {
+
+	public void write(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

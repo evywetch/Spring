@@ -1,0 +1,23 @@
+package player;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import soundsystem.CompactDisc;
+
+@Component
+public class DVDPlayer implements MediaPlayer{
+	
+@Autowired
+	private CompactDisc cd;
+	
+	public DVDPlayer(CompactDisc cd){
+		this.cd = cd;
+		
+	}
+
+	public void play() {
+		cd.play();
+		
+	}
+}
